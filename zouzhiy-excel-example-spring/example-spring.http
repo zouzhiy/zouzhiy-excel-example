@@ -1,0 +1,22 @@
+###
+GET http://localhost:8080/test/export/no-template1
+
+###
+GET http://localhost:8080/test/export/no-template2
+
+###
+GET http://localhost:8080/test/export/template1
+
+###
+GET http://localhost:8080/test/export/template2
+
+###
+POST http://localhost:8080/test/import
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="multipartFile"; filename="export.xls"
+Content-Type: multipart/form-data
+
+< ./excel/import.xls
+--WebAppBoundary--
