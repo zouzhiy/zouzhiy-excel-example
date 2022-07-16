@@ -1,7 +1,6 @@
-package io.github.zouzhiy.excel.example.spring.controller;
+package io.github.zouzhiy.excel.example.spring.test;
 
 import io.github.zouzhiy.excel.builder.ZouzhiyExcelFactory;
-import io.github.zouzhiy.excel.example.spring.vo.DemoVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package io.github.zouzhiy.excel.example.spring.vo;
+package io.github.zouzhiy.excel.example.spring.user;
 
 import io.github.zouzhiy.excel.annotation.ExcelClass;
 import io.github.zouzhiy.excel.annotation.ExcelField;

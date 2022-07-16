@@ -1,4 +1,4 @@
-package io.github.zouzhiy.excel.example.spring.vo;
+package io.github.zouzhiy.excel.example.spring.test;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

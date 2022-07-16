@@ -32,3 +32,15 @@ Content-Type: multipart/form-data
 
 < ./excel/用户信息.xlsx
 --WebAppBoundary--
+
+
+###
+POST http://localhost:8080/dict-demo/list/import
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="export.xls"
+Content-Type: multipart/form-data
+
+< ./excel/列表信息（字典扩展） .xlsx
+--WebAppBoundary--

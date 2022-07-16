@@ -1,7 +1,7 @@
-package io.github.zouzhiy.excel.example.spring.controller;
+package io.github.zouzhiy.excel.example.spring.user;
 
 import io.github.zouzhiy.excel.builder.ZouzhiyExcelFactory;
-import io.github.zouzhiy.excel.example.spring.vo.UserVO;
+import io.github.zouzhiy.excel.example.spring.user.UserVO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

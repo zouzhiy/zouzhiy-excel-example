@@ -1,7 +1,7 @@
-package io.github.zouzhiy.excel.example.spring.controller;
+package io.github.zouzhiy.excel.example.spring.dict;
 
 import io.github.zouzhiy.excel.builder.ZouzhiyExcelFactory;
-import io.github.zouzhiy.excel.example.spring.vo.UserVO;
+import io.github.zouzhiy.excel.example.spring.user.UserVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,41 +18,42 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
-@RequestMapping("user")
-public class UserExportContrller {
+@RequestMapping("dict-demo")
+public class DictDemoExportController {
 
     @Resource
     private ZouzhiyExcelFactory zouzhiyExcelFactory;
 
     @GetMapping("list/export")
-    public void exportUserList(HttpServletResponse response) throws IOException {
-        List<UserVO> userVOList = this.listUser();
+    public void exportList(HttpServletResponse response) throws IOException {
+        List<DictDemoVO> voList = this.listVo();
 
         response.addHeader("Content-Disposition"
-                , "attachment; filename*=utf-8''" + URLEncoder.encode("用户信息.xlsx", StandardCharsets.UTF_8.name()));
+                , "attachment; filename*=utf-8''" + URLEncoder.encode("列表信息（字典扩展）.xlsx", StandardCharsets.UTF_8.name()));
         zouzhiyExcelFactory
                 .write(response.getOutputStream())
                 .sheet()
-                .title("用户信息")
+                .title("列表信息（字典扩展）")
                 .titleRowStartIndex(0)
                 .dataRowStartIndex(2)
-                .write(userVOList, UserVO.class);
+                .write(voList, DictDemoVO.class);
     }
 
 
-    private List<UserVO> listUser() {
+    private List<DictDemoVO> listVo() {
         Random random = new Random(System.currentTimeMillis());
-        List<UserVO> userVOList = new ArrayList<>();
+        List<DictDemoVO> voList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            UserVO userVO = UserVO.builder()
+            DictDemoVO vo = DictDemoVO.builder()
                     .username("姓名-" + i)
                     .tel(Math.abs(random.nextLong()) + "")
                     .age(10 + i)
                     .birthDay(LocalDate.of(2022, 7, random.nextInt(29) + 1))
                     .score(BigDecimal.valueOf(random.nextDouble()))
+                    .gender(random.nextInt(3))
                     .build();
-            userVOList.add(userVO);
+            voList.add(vo);
         }
-        return userVOList;
+        return voList;
     }
 }
