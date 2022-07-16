@@ -20,3 +20,15 @@ Content-Type: multipart/form-data
 
 < ./excel/import.xls
 --WebAppBoundary--
+
+
+###
+POST http://localhost:8080/user/list/import
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="export.xls"
+Content-Type: multipart/form-data
+
+< ./excel/用户信息.xlsx
+--WebAppBoundary--
