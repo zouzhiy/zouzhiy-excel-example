@@ -1,7 +1,6 @@
 package io.github.zouzhiy.excel.example.spring.dict;
 
 import io.github.zouzhiy.excel.builder.ZouzhiyExcelFactory;
-import io.github.zouzhiy.excel.example.spring.user.UserVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

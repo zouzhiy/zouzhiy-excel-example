@@ -38,17 +38,17 @@ public class GenderHandler extends AbstractCellHandler<Integer> {
 
     @Override
     protected void setCellValue(RowContext rowContext, ExcelFieldConfig excelFieldConfig, Cell cell, Integer value) {
-            switch (value){
-                case MALE_INT:
-                    cell.setCellValue(MALE_STRING);
-                    break;
-                case FEMALE_INT:
-                    cell.setCellValue(FEMALE_STRING);
-                    break;
-                default:
-                    cell.setCellValue(UNKNOWN_STRING);
-                    break;
-            }
+        switch (value) {
+            case MALE_INT:
+                cell.setCellValue(MALE_STRING);
+                break;
+            case FEMALE_INT:
+                cell.setCellValue(FEMALE_STRING);
+                break;
+            default:
+                cell.setCellValue(UNKNOWN_STRING);
+                break;
+        }
     }
 
     @Override

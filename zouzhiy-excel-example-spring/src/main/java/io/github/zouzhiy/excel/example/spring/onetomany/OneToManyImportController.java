@@ -1,4 +1,4 @@
-package io.github.zouzhiy.excel.example.spring.dict;
+package io.github.zouzhiy.excel.example.spring.onetomany;
 
 import io.github.zouzhiy.excel.builder.ZouzhiyExcelFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,19 +12,20 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("dict-demo")
-public class DictDemoImportController {
+@RequestMapping("one-to-many")
+public class OneToManyImportController {
 
     @Resource
     private ZouzhiyExcelFactory zouzhiyExcelFactory;
 
     @PostMapping("list/import")
-    public List<DictDemoVO> exportList(@RequestPart MultipartFile file) throws IOException {
+    public List<OneToManyVO> exportList(@RequestPart MultipartFile file) throws IOException {
+
         return zouzhiyExcelFactory
                 .read(file.getInputStream())
                 .sheet()
                 .dataRowStartIndex(2)
-                .read(DictDemoVO.class);
+                .read(OneToManyVO.class);
     }
 
 }
